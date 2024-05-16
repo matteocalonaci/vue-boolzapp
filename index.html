@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
+
     <!-- Importo Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Importo Axios -->
@@ -20,12 +18,116 @@
 </head>
 
 <body>
-
+    <!-- APP è il nostro contenitore generale -->
     <div id="app">
-        <header>
-            <h1>{{titolo}}</h1>
-            <hr>
-        </header>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="leftSide">
+                    <!-- HEADER -->
+                    <div class="header">
+                        <div class="userImg">
+                            <img src="./IMG/userImg.jpg" class="cover">
+                        </div>
+                        <div class="userName">
+                            <span><b>Matteo Calonaci</b></span>
+                        </div>
+                        <ul class="icons">
+                            <li><i class="fa-regular fa-circle"></i></li>
+                            <li><i class="fa-regular fa-message"></i></li>
+                            <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                        </ul>
+                    </div>
+
+
+
+                    <!-- NOTIFICA -->
+                    <div class="notifica">
+                        <div class="notificaContainer">
+                            <i class="fa-solid fa-bell-slash"></i>
+                            <div class="notificheText">
+                                <span> <b>Ricevi notifiche di nuovi messaggi</b></span>
+                                <span class="underline nero"> Attiva notifiche desktop</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- SEARCH CHAT -->
+                    <div class="searchChat">
+                        <input type="text" placeholder="Cerca o inizia nuova chat">
+                    </div>
+
+
+
+                    <!-- CHAT LIST -->
+                    <div class="chatList">
+                        <div class="headerChat">
+                            <div class="userImg">
+                                <img src="./IMG/avatar_1.jpg" class="cover">
+                            </div>
+                            <div class="chatPreview">
+                                <span> <b>Michele</b></span>
+                                <span class="nero"> Ultimo messaggio inviato</span>
+                            </div>
+                            <p class="orario nero">12:00</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- RIGHT SIDE -->
+                <div class="rightSide">
+
+                    <!-- HEADER CHAT UTENTE -->
+                    <div class="header">
+                        <div class="userImg">
+                            <img src="./IMG/avatar_1.jpg" class="cover">
+                        </div>
+                        <div class="notificheTextRight">
+                            <span> <b>Michele</b></span>
+                            <span class="nero"> Ultimo accesso oggi alle 12:00</span>
+                        </div>
+                        <ul class="icons">
+                            <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                            <li><i class="fa-solid fa-paperclip"></i></li>
+                            <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                        </ul>
+                    </div>
+
+
+
+                    <!-- CORPO DELLA CHAT -->
+                    <div class="chatBox">
+                        <div class="message myMessage">
+                            <p>Hai portato a spasso il cane? <br> <span>15:30</span></p>
+                        </div>
+                        <div class="message friendMessage">
+                            <p>Tutto fatto! <br> <span>16:15</span></p>
+                        </div>
+                    </div>
+
+
+                    <!-- CHATBOX -->
+                    <div class="chatBoxInput">
+                        <i class="fa-regular fa-face-smile"></i>
+                        <input type="text" placeholder="Scrivi un messaggio">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    </div>
 
     </div>
 
