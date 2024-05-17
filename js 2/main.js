@@ -168,10 +168,7 @@ createApp({
                     ],
                 }
             ],
-            activeConv: 0,
-            userClicked: 0,
-            inputValueMsg: "",
-            text: "",
+
             activeContact: 0,
             userInput: "",
 
