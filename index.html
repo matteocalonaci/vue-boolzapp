@@ -62,13 +62,14 @@
 
                     <!-- CHAT LIST -->
                     <div class="chatList">
-                        <div class="headerChat" v-for="contact in contacts">
+                        <div class="headerChat" @click="cliccato(i)" v-for="contact, i in contacts">
                             <div class="userImg">
                                 <img :src="contact.avatar" class="cover">
                             </div>
                             <div class="chatPreview">
                                 <span> <b>{{contact.name}}</b></span>
-                                <span class="nero"> Ultimo messaggio inviato</span>
+                                <span class="nero">Ultimo messaggio inviato</span>
+                                <!-- <span class="nero">{{ lastElement(contact.messages).message}}</span> -->
                             </div>
                             <p class="orario nero">12:00</p>
                         </div>
@@ -84,29 +85,32 @@
                     <!-- HEADER CHAT UTENTE -->
                     <div class="header">
                         <div class="userImg">
-                            <img src="./IMG/avatar_1.jpg" class="cover">
+                            <img src="./img/avatar_1.jpg" class="cover">
                         </div>
                         <div class="notificheTextRight">
                             <span> <b>Michele</b></span>
                             <span class="nero"> Ultimo accesso oggi alle 12:00</span>
                         </div>
                         <ul class="icons">
-                            <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                            <li><i class="fa-solid fa-magnifying-glass"></i> </li>
                             <li><i class="fa-solid fa-paperclip"></i></li>
                             <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
                         </ul>
                     </div>
 
 
-
                     <!-- CORPO DELLA CHAT -->
+
                     <div class="chatBox">
-                        <div class="message myMessage">
-                            <p>Hai portato a spasso il cane? <br> <span>15:30</span></p>
-                        </div>
-                        <div class="message friendMessage">
-                            <p>Tutto fatto! <br> <span>16:15</span></p>
-                        </div>
+                        <template @click="cliccato(i)" v-for=" element, index in contacts[userClicked].messages">
+                            <div class="message myMessage" v-if=" element.status =='sent'">
+                                <p>{{element.message}} <br> <span>{{element.date}}</span></p>
+                            </div>
+                            <div class="message friendMessage" v-else>
+                                <p>{{element.message}} <br> <span>{{element.date}}</span></p>
+                            </div>
+
+                        </template>
                     </div>
 
 
@@ -114,6 +118,7 @@
                     <div class="chatBoxInput">
                         <i class="fa-regular fa-face-smile"></i>
                         <input type="text" placeholder="Scrivi un messaggio">
+                        <button click="printMessage">ADD</button>
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
