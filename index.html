@@ -62,12 +62,12 @@
 
                     <!-- CHAT LIST -->
                     <div class="chatList">
-                        <div class="headerChat">
+                        <div class="headerChat" v-for="contact in contacts">
                             <div class="userImg">
-                                <img src="./IMG/avatar_1.jpg" class="cover">
+                                <img :src="contact.avatar" class="cover">
                             </div>
                             <div class="chatPreview">
-                                <span> <b>Michele</b></span>
+                                <span> <b>{{contact.name}}</b></span>
                                 <span class="nero"> Ultimo messaggio inviato</span>
                             </div>
                             <p class="orario nero">12:00</p>
