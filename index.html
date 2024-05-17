@@ -85,14 +85,15 @@
                     <!-- AIUTO  ticket -->
 
                     <!-- HEADER CHAT UTENTE -->
-                    <div class="header">
-                        <div class="userImg">
-                            <img src="./img/avatar_1.jpg" class="cover">
+                    <div class="header" v-for="contacts">
+                        <div class=" userImg">
+                            <img :src="contacts[userClicked].avatar" class="cover">
                         </div>
                         <div class="notificheTextRight">
-                            <span> <b>Michele</b></span>
+                            <span> <b>{{contacts[userClicked].name}}</b></span>
                             <span class="nero"> Ultimo accesso oggi alle 12:00</span>
                         </div>
+
                         <ul class="icons">
                             <li><i class="fa-solid fa-magnifying-glass"></i> </li>
                             <li><i class="fa-solid fa-paperclip"></i></li>
@@ -119,8 +120,9 @@
                     <!-- CHATBOX -->
                     <div class="chatBoxInput">
                         <i class="fa-regular fa-face-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
-                        <button click="printMessage">ADD</button>
+
+                        <input type="text" placeholder="Scrivi un messaggio" v-model="inputValue"
+                            @keyup.enter=" printMessage()" class="inputText" aria-describedby="myMessage">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>

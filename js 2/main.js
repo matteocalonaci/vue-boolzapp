@@ -168,8 +168,9 @@ createApp({
                     ],
                 }
             ],
-
+            activeConv: 0,
             userClicked: 0,
+            inputValueMsg: "",
             text: "",
 
 
@@ -189,9 +190,14 @@ createApp({
         // {{ lastElement(contact.messages).message}}
 
         printMessage() {
-            console.log(this.text)
-            this.contacts.push(this.text)
-            this.text = ""
+            this.contacts[this.activeConv].messages.push({
+                message: this.text,
+                status: "sent",
+            })
+            this.inputValue = "";
+
+
+
         }
     },
 
