@@ -150,7 +150,6 @@ input {
 /* RIGHRSIDE */
 .container .rightSide {
     width: 70%;
-    background-image: url(/IMG/sfondoCoversazione.jpg);
     background-color: rgb(243, 238, 234);
 
 }
@@ -214,7 +213,7 @@ input {
 .chatBox {
     width: 100%;
     height: calc(100% - 8rem);
-    background-color: red;
+    background-image: url(/img/sfondoCoversazione.jpg);
     overflow-y: scroll;
     padding: 1rem 6rem;
 }
