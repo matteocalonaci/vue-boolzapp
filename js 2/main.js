@@ -193,7 +193,9 @@ createApp({
         printMessage() {
             this.contacts[this.activeContact].messages.push({ message: this.userInput, status: "sent", date: '10/01/2020 15:51:00' });
             this.userInput = ""
-
+            setTimeout(() => {
+                this.contacts[this.activeContact].messages.push({ message: "ok", status: "received", date: '28/03/2020 16:15:22' });
+            }, 1000);
         }
 
     },
