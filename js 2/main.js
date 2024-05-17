@@ -172,7 +172,8 @@ createApp({
             userClicked: 0,
             inputValueMsg: "",
             text: "",
-
+            activeContact: 0,
+            userInput: "",
 
         }
     },
@@ -190,16 +191,14 @@ createApp({
         // {{ lastElement(contact.messages).message}}
 
         printMessage() {
-            this.contacts[this.activeConv].messages.push({
-                message: this.text,
-                status: "sent",
-            })
-            this.inputValue = "";
-
-
+            this.contacts[this.activeContact].messages.push({ message: this.userInput, status: "sent", date: '10/01/2020 15:51:00' });
+            this.userInput = ""
 
         }
+
     },
+
+
 
 
     //MOMENTI DI BASE

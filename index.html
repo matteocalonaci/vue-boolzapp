@@ -121,8 +121,7 @@
                     <div class="chatBoxInput">
                         <i class="fa-regular fa-face-smile"></i>
 
-                        <input type="text" placeholder="Scrivi un messaggio" v-model="inputValue"
-                            @keyup.enter=" printMessage()" class="inputText" aria-describedby="myMessage">
+                        <input @keyup.enter="printMessage()" v-model:="userInput" type="search">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
