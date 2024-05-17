@@ -168,7 +168,7 @@ createApp({
                     ],
                 }
             ],
-
+            userClicked: 0,
             activeContact: 0,
             userInput: "",
 
