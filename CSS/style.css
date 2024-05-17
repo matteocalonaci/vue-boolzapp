@@ -167,6 +167,16 @@ input {
 
 /* CORPO DELLA CHAT */
 
+.chatBox {
+    width: 100%;
+    height: calc(100% - 8rem);
+    background-image: url(../img/sfondoCoversazione.jpg);
+    background-size: contain;
+    overflow-y: scroll;
+    padding: 1rem 6rem;
+}
+
+
 .message {
     position: relative;
     display: flex;
@@ -210,13 +220,7 @@ input {
 
 /* ----------------CHAT BOX---------------- */
 
-.chatBox {
-    width: 100%;
-    height: calc(100% - 8rem);
-    background-image: url(/img/sfondoCoversazione.jpg);
-    overflow-y: scroll;
-    padding: 1rem 6rem;
-}
+
 
 .chatBoxInput {
     height: 4rem;

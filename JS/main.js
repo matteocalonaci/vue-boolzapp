@@ -3,7 +3,6 @@ createApp({
     data() {
         return {
             titolo: "Vue-BoolZapp",
-
             contacts: [
                 {
                     name: 'Michele',
@@ -166,27 +165,37 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
 
-
+            userClicked: 0,
+            text: "",
 
 
         }
     },
 
     methods: {
-        createCard() {
-            for (let i = 0; i < 10; i++) {
+        cliccato(index) {
+            console.log("Cliccato", index)
+            this.userClicked = index
+        },
 
-            }
+        lastElement(array) {
+            let ultimoIndice = array.length - 1
+            return array[ultimoIndice]
+        },
+        // {{ lastElement(contact.messages).message}}
+
+        printMessage() {
+            console.log(this.text)
+            this.contacts.push(this.text)
+            this.text = ""
         }
-
     },
 
 
     //MOMENTI DI BASE
     mounted() {
         console.log("App montata")
-
     }
 }).mount("#app")
