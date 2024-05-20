@@ -171,7 +171,7 @@ createApp({
             userClicked: 0,
             activeContact: 0,
             userInput: "",
-
+            searchInput: "",
         }
     },
 
@@ -181,21 +181,25 @@ createApp({
             this.userClicked = index
         },
 
-        lastElement(array) {
-            let ultimoIndice = array.length - 1
-            return array[ultimoIndice]
-        },
-        // {{ lastElement(contact.messages).message}}
+        // lastElement(array) {
+        //     let ultimoIndice = array.length - 1
+        //     return array[ultimoIndice]
+        // },
+
 
         printMessage() {
-            this.contacts[this.activeContact].messages.push({ message: this.userInput, status: "sent", date: '10/01/2020 15:51:00' });
+
+            this.contacts[this.userClicked].messages.push({ message: this.userInput, status: "sent", date: '10/01/2020 15:51:00' });
+            console.log(this.userClicked)
             this.userInput = ""
             setTimeout(() => {
-                this.contacts[this.activeContact].messages.push({ message: "ok", status: "received", date: '28/03/2020 16:15:22' });
+                this.contacts[this.userClicked].messages.push({ message: "ok", status: "received", date: '28/03/2020 16:15:22' });
             }, 1000);
-        }
+        },
+
 
     },
+
 
 
 

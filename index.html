@@ -68,10 +68,11 @@
                             </div>
                             <div class="chatPreview">
                                 <span> <b>{{contact.name}}</b></span>
-                                <span class="nero">Ultimo messaggio inviato</span>
-                                <!-- <span class="nero">{{ lastElement(contact.messages).message}}</span> -->
+                                <span class="nero"> Ultimo messaggio inviato</span>
+                                <!-- {{contact.messages[contact.messages.length-1].message}} -->
                             </div>
-                            <p class="orario nero">12:00</p>
+                            <p class="orario nero">12.00</p>
+                            <!-- {{contact.messages[contact.messages.length-1].date}} -->
                         </div>
 
                     </div>
@@ -82,16 +83,14 @@
                 <!-- RIGHT SIDE -->
                 <div class="rightSide">
 
-                    <!-- AIUTO  ticket -->
-
                     <!-- HEADER CHAT UTENTE -->
-                    <div class="header" v-for="contacts">
+                    <div class="header">
                         <div class=" userImg">
                             <img :src="contacts[userClicked].avatar" class="cover">
                         </div>
                         <div class="notificheTextRight">
                             <span> <b>{{contacts[userClicked].name}}</b></span>
-                            <span class="nero"> Ultimo accesso oggi alle 12:00</span>
+                            <span class="nero"> Ultimo accesso oggi alle 22:10</span>
                         </div>
 
                         <ul class="icons">
@@ -121,7 +120,7 @@
                     <div class="chatBoxInput">
                         <i class="fa-regular fa-face-smile"></i>
 
-                        <input @keyup.enter="printMessage()" v-model:="userInput" type="search">
+                        <input @keyup.enter="printMessage()" v-model:="userInput">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
