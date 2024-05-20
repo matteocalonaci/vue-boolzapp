@@ -120,6 +120,7 @@ input {
     overflow-y: scroll;
 }
 
+
 .headerChat {
     position: relative;
     width: 100%;
@@ -189,10 +190,20 @@ input {
     right: 0;
     width: 18rem;
     padding: 0.5rem;
-    background-color: rgb(213, 249, 186);
     border-radius: 0.5rem;
+    background-color: rgb(213, 249, 186);
 }
 
+
+.message p::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: linear-gradient(135deg, rgb(213, 249, 186) 0%, rgb(213, 249, 186)50%, transparent 50%, transparent)
+}
 
 
 .message p span {
@@ -203,12 +214,11 @@ input {
 }
 
 .myMessage {
-    display: flex;
     justify-content: flex-end;
+
 }
 
 .friendMessage {
-    display: flex;
     justify-content: flex-start;
 }
 
@@ -216,6 +226,15 @@ input {
     background-color: white;
 }
 
+.message.friendMessage p::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: linear-gradient(225deg, white 0%, white 50%, transparent 50%, transparent)
+}
 
 
 /* ----------------CHAT BOX---------------- */
