@@ -172,6 +172,7 @@ createApp({
             activeContact: 0,
             userInput: "",
             searchInput: "",
+
         }
     },
 
@@ -198,6 +199,19 @@ createApp({
         },
 
 
+    },
+
+    accrocchio() {
+        this.activeContact = 0
+    },
+
+
+    computed: {
+        filteredContacts: function () {
+            return this.contacts.filter((contact) => {
+                return contact.name.toLowerCase().match(this.searchInput)
+            })
+        }
     },
 
 
