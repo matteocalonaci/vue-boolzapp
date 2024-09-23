@@ -177,24 +177,17 @@ createApp({
     },
 
     methods: {
-        cliccato(index) {
-            console.log("Cliccato", index)
-            this.userClicked = index
+        clicked(i){
+            console.log("Hai cliccato su:", i)
+            this.userClicked = i
         },
-
-        // lastElement(array) {
-        //     let ultimoIndice = array.length - 1
-        //     return array[ultimoIndice]
-        // },
-
-
         printMessage() {
 
-            this.contacts[this.userClicked].messages.push({ message: this.userInput, status: "sent", date: '10/01/2020 15:51:00' });
+            this.contacts[this.userClicked].messages.push({ message: this.userInput, status: "sent", date: new Date().toLocaleString('it-IT', { dateStyle: 'short' }) });
             console.log(this.userClicked)
             this.userInput = ""
             setTimeout(() => {
-                this.contacts[this.userClicked].messages.push({ message: "ok", status: "received", date: '28/03/2020 16:15:22' });
+                this.contacts[this.userClicked].messages.push({ message: "GODO!", status: "received", date: new Date().toLocaleString('it-IT', { dateStyle: 'short' }) });
             }, 1000);
         },
 
