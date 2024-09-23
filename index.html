@@ -55,7 +55,7 @@
 
                     <!-- SEARCH CHAT -->
                     <div class="searchChat">
-                        <input v-model="searchInput" @input="accrocchio" type="text"
+                        <input v-model="searchInput" type="text"
                             placeholder="Cerca o inizia una nuova chat">
                     </div>
 
@@ -63,8 +63,7 @@
 
                     <!-- CHAT LIST -->
                     <div class="chatList">
-                        <div class="col-12 headerChat" @click="cliccato(i)" v-for="contact, i in filteredContacts">
-                            <div class=" col-2 userImg">
+                        <div class="col-12 headerChat" @click="cliccato(contact.id)" v-for="contact, i in filteredContacts">                            <div class=" col-2 userImg">
                                 <img :src="contact.avatar" class="cover">
                             </div>
                             <div class=" col-7 chatPreview">

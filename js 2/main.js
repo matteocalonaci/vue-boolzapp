@@ -7,6 +7,7 @@ createApp({
             titolo: "Vue-BoolZapp",
             contacts: [
                 {
+                    id: 0,
                     name: 'Michele',
                     avatar: './img/avatar_1.jpg',
                     visible: true,
@@ -29,6 +30,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 1,
                     name: 'Fabio',
                     avatar: './img/avatar_2.jpg',
                     visible: true,
@@ -51,6 +53,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 2,
                     name: 'Samuele',
                     avatar: './img/avatar_3.jpg',
                     visible: true,
@@ -73,6 +76,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 3,
                     name: 'Alessandro B.',
                     avatar: './img/avatar_4.jpg',
                     visible: true,
@@ -90,6 +94,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 4,
                     name: 'Alessandro L.',
                     avatar: './img/avatar_5.jpg',
                     visible: true,
@@ -107,6 +112,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 5,
                     name: 'Claudia',
                     avatar: './img/avatar_6.jpg',
                     visible: true,
@@ -129,6 +135,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 6,
                     name: 'Federico',
                     avatar: './img/avatar_7.jpg',
                     visible: true,
@@ -146,6 +153,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 7,
                     name: 'Davide',
                     avatar: './img/avatar_8.jpg',
                     visible: true,
@@ -177,15 +185,16 @@ createApp({
     },
 
     methods: {
-        clicked(i){
-            console.log("Hai cliccato su:", i)
-            this.userClicked = i
+        cliccato(contactId){
+            console.log("Hai cliccato su:", contactId)
+          const contactIndex = this.contacts.findIndex(contact => contact.id === contactId)
+          this.userClicked = contactIndex
         },
         printMessage() {
 
             this.contacts[this.userClicked].messages.push({ message: this.userInput, status: "sent", date: new Date().toLocaleString('it-IT', { dateStyle: 'short' }) });
             console.log(this.userClicked)
-            this.userInput = ""
+            this.userInput = "" // Reset userInput to an empty string after sending a message
             setTimeout(() => {
                 this.contacts[this.userClicked].messages.push({ message: "GODO!", status: "received", date: new Date().toLocaleString('it-IT', { dateStyle: 'short' }) });
             }, 1000);
@@ -193,11 +202,6 @@ createApp({
 
 
     },
-
-    accrocchio() {
-        this.activeContact = 0
-    },
-
 
     computed: {
         filteredContacts: function () {
