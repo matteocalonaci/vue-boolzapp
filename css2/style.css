@@ -181,6 +181,7 @@ input {
     font-size: 0.8rem;
 }
 
+
 .message p {
     position: relative;
     right: 0;
@@ -211,11 +212,45 @@ input {
 
 .myMessage {
     justify-content: flex-end;
+    .options{
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        z-index: 9999;
+        a{
+            color: rgb(104, 104, 104);
+        }
+    
+    }
+}
 
+.delite:hover{
+font-size: 1rem;
+i{
+    color: rgb(194, 3, 3);
+}
+}
+
+
+.mod-input{
+    width: 18rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: rgb(213, 249, 186);  
 }
 
 .friendMessage {
     justify-content: flex-start;
+    .options{
+        position: absolute;
+        top: 0.5rem;
+        right: 26rem;
+        z-index: 9999;
+        a{
+            color: rgb(104, 104, 104);
+        }
+    
+    }
 }
 
 .friendMessage p {

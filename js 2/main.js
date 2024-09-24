@@ -180,6 +180,8 @@ createApp({
             activeContact: 0,
             userInput: "",
             searchInput: "",
+            editingMessage: null,
+
 
         }
     },
@@ -200,6 +202,33 @@ createApp({
             }, 1000);
         },
 
+        deleteMessage(index) {
+            Swal.fire({
+                title: 'Sei sicuro?',
+                text: "Non potrai più recuperare questo messaggio!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sì, cancella!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.contacts[this.userClicked].messages.splice(index, 1);
+                    Swal.fire(
+                        'Cancellato!',
+                        'Il tuo messaggio è stato cancellato.',
+                        'success'
+                    )
+                }
+            })
+        },
+        editMessage(index) {
+            this.editingMessage = index;
+        },
+        saveMessage(index, message) {
+            this.contacts[this.userClicked].messages[index].message = message;
+            this.editingMessage = null;
+        },
 
     },
 

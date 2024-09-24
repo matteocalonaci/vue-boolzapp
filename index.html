@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Importo Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -68,7 +69,7 @@
                             </div>
                             <div class=" col-7 chatPreview">
                                 <span> <b>{{contact.name}}</b></span>
-                                <span class="nero"> {{contact.messages[contact.messages.length-1].message}}</span>
+                                            <span class="nero"> {{contact.messages[contact.messages.length-1].message}}</span>
                                 <!-- <span class="nero"> Ultimo messaggio inviato</span> -->
                             </div>
                             <p class=" col-2 orario nero">12.00</p>
@@ -104,10 +105,23 @@
 
                     <div class="chatBox">
                         <template @click="cliccato(i)" v-for=" element, index in contacts[userClicked].messages">
-                            <div class="message myMessage" v-if=" element.status =='sent'">
-                                <p>{{element.message}} <br> <span>{{element.date}}</span></p>
+                            <div class="message myMessage" v-if="element.status =='sent'">
+                                <div class="options">
+                                    <a class="delite" href="#" @click.prevent="deleteMessage(index)"><i class="fa-solid fa-trash m-1"></i></a>
+                                    <a class="mod" href="#" @click.prevent="editMessage(index)"><i class="fa-solid fa-ellipsis-vertical m-1"></i></a>
+                                </div>
+                            
+                                <div v-if="editingMessage !== index" class="message myMessage">
+                                    <p style="max-width: 15rem;">{{ element.message }} <br> <span>{{ element.date }}</span></p>
+                                </div>
+                                <div v-else class="mod-input">
+                                    <input style="width: 15rem;" v-model="element.message" @blur="saveMessage(index, element.message)" type="text">
+                                </div>
                             </div>
                             <div class="message friendMessage" v-else>
+                                <div class="options">
+                                    <a class="delite" href="#" @click.prevent="deleteMessage(index)"><i class="fa-solid fa-trash m-1"></i></a>
+                                </div>
                                 <p>{{element.message}} <br> <span>{{element.date}}</span></p>
                             </div>
 
