@@ -159,7 +159,7 @@ input {
 }
 
 .notificheTextRight span {
-    margin-right: 34rem;
+    margin-right: 30rem;
 }
 
 /* CORPO DELLA CHAT */
@@ -231,6 +231,10 @@ i{
 }
 }
 
+.my-popup {
+    z-index: 1000 !important; /* Aggiungi questa riga */
+}
+
 
 .mod-input{
     width: 18rem;
@@ -244,7 +248,7 @@ i{
     .options{
         position: absolute;
         top: 0.5rem;
-        right: 26rem;
+        right: 20rem;
         z-index: 9999;
         a{
             color: rgb(104, 104, 104);
@@ -261,10 +265,10 @@ i{
     content: "";
     position: absolute;
     top: 0;
-    right: -0.5rem;
+    right: 17.5rem;
     width: 1rem;
     height: 1rem;
-    background: linear-gradient(135deg, white 0%, white 50%, transparent 50%, transparent)
+    background: linear-gradient(225deg, white 0%, white 50%, transparent 50%, transparent)
 }
 
 
@@ -318,6 +322,7 @@ i{
 .nero {
     color: rgba(0, 0, 0, 0.58);
     font-size: 0.8rem;
+    width: 100%;
 
 
 }

@@ -47,7 +47,7 @@ createApp({
                         },
                         {
                             date: '20/03/2020 16:35:00',
-                            message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                            message: 'Devo andare a fare la spesa.',
                             status: 'sent'
                         }
                     ],
@@ -142,12 +142,12 @@ createApp({
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Fai gli auguri a Martina che è il suo compleanno!',
+                            message: "E'il compleanno di Maritina",
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Grazie per avermelo ricordato, le scrivo subito!',
+                            message: 'Grazie! le scrivo subito!',
                             status: 'received'
                         }
                     ],
@@ -160,7 +160,7 @@ createApp({
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                            message: 'Ciao, la pizza stasera?',
                             status: 'received'
                         },
                         {
@@ -198,7 +198,7 @@ createApp({
             console.log(this.userClicked)
             this.userInput = "" // Reset userInput to an empty string after sending a message
             setTimeout(() => {
-                this.contacts[this.userClicked].messages.push({ message: "GODO!", status: "received", date: new Date().toLocaleString('it-IT', { dateStyle: 'short' }) });
+                this.contacts[this.userClicked].messages.push({ message: "Ciao!", status: "received", date: new Date().toLocaleString('it-IT', { dateStyle: 'short' }) });
             }, 1000);
         },
 
@@ -210,7 +210,10 @@ createApp({
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Sì, cancella!'
+                confirmButtonText: 'Sì, cancella!',
+                customClass: {
+                    popup: 'my-popup' // Aggiungi una classe personalizzata
+                }
             }).then((result) => {
                 if (result.isConfirmed) {
                     this.contacts[this.userClicked].messages.splice(index, 1);
@@ -218,9 +221,9 @@ createApp({
                         'Cancellato!',
                         'Il tuo messaggio è stato cancellato.',
                         'success'
-                    )
+                    );
                 }
-            })
+            });
         },
         editMessage(index) {
             this.editingMessage = index;

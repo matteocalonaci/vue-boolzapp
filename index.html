@@ -112,7 +112,7 @@
                                 </div>
                             
                                 <div v-if="editingMessage !== index" class="message myMessage">
-                                    <p style="max-width: 15rem;">{{ element.message }} <br> <span>{{ element.date }}</span></p>
+                                    <p style="max-width: 18rem;">{{ element.message }} <br> <span>{{ element.date }}</span></p>
                                 </div>
                                 <div v-else class="mod-input">
                                     <input style="width: 15rem;" v-model="element.message" @blur="saveMessage(index, element.message)" type="text">
